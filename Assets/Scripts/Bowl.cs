@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bowl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int _needCountMixing;
+    private int _currentCountMixing;
+
+    public Action OnFinished;
+
     void Start()
     {
         
@@ -12,6 +17,20 @@ public class Bowl : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    public void Mix()
+    {
+        _currentCountMixing++;
+        if (_currentCountMixing == _needCountMixing)
+        {
+            Debug.Log("OnFinished");
+        }
+    }
+
+    public void Add()
     {
         
     }
