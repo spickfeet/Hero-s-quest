@@ -4,10 +4,10 @@ public class Instrument : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IWorkStation bowl = collision.GetComponent<IWorkStation>();
-        if(bowl != null)
+        IMinigameWorkStation minigameWorkStation = collision.GetComponent<IMinigameWorkStation>();
+        if(minigameWorkStation != null)
         {
-            bowl.Cook();
+            minigameWorkStation.Cook();
         }
     }
 }

@@ -1,13 +1,22 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WorkStation : MonoBehaviour, IWorkStation
+public class MinigameWorkStation : MonoBehaviour, IMinigameWorkStation
 {
     [SerializeField] private int _needCountMixing;
     private int _currentCountMixing = 0;
 
-    [SerializeField] List<ItemType> _needItems;
+    [SerializeField] private List<ItemType> _needItems;
+
+    [SerializeField] private Button _button;
+    [SerializeField] private GameObject _window;
+
+    private void Awake()
+    {
+        _button.onClick.AddListener(delegate { _window.SetActive(false); });
+    }
 
     public Action OnFinished { get; set; }
 
@@ -18,6 +27,7 @@ public class WorkStation : MonoBehaviour, IWorkStation
             _currentCountMixing++;
             if (_currentCountMixing >= _needCountMixing)
             {
+                OnFinished?.Invoke();
                 Debug.Log("OnFinished");
             }
         }

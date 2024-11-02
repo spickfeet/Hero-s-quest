@@ -1,6 +1,6 @@
 ﻿using System;
 
-public interface IWorkStation
+public interface IMinigameWorkStation
 {
     public void Cook();
     public void Add(ItemType item);
