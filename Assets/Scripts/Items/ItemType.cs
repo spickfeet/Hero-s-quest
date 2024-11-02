@@ -7,4 +7,7 @@ public enum ItemType
     Sugar,
     Cream,
     Dough,
+    Form,
+    HeavyCream,
+    CreamCheese,
 }
