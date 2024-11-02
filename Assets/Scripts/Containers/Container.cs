@@ -19,22 +19,6 @@ public class Container : MonoBehaviour, IContainer
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CollectItem(new Item(ItemType.Strawberry));
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            CollectItem(new Item(ItemType.Flour));
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RemoveItem();
-        }
-    }
-
     public void CollectItem(IItem item)
     {
         if (_item == null || _item.Type == ItemType.Empty)
