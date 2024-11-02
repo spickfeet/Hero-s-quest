@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Component : MonoBehaviour
+public class Ingredient : MonoBehaviour
 {
     [SerializeField] private ItemType _item;
     private Vector2 _basePos;
@@ -14,10 +14,10 @@ public class Component : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IWorkStation bowl = collision.GetComponent<IWorkStation>();
-        if (bowl != null)
+        IMinigameWorkStation minigameWorkStation = collision.GetComponent<IMinigameWorkStation>();
+        if (minigameWorkStation != null)
         {
-            bowl.Add(_item);
+            minigameWorkStation.Add(_item);
         }
     }
 }
