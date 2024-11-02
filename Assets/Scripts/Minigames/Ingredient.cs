@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(BoxCollider2D), typeof(EventTrigger))]
 public class Ingredient : MonoBehaviour
 {
     [SerializeField] private ItemType _item;

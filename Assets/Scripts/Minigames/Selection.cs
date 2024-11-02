@@ -11,6 +11,11 @@ public class Selection : MonoBehaviour, IPickable
 
     private void Awake()
     {
+        ResetPos();
+    }
+
+    public void ResetPos()
+    {
         _basePos = new Vector2(-10000, -1000);
     }
 
@@ -26,6 +31,6 @@ public class Selection : MonoBehaviour, IPickable
     public void Drop(Transform transform)
     {
         transform.position = _basePos;
-        _basePos = new Vector2(-10000,-1000);
+        ResetPos();
     }
 }
