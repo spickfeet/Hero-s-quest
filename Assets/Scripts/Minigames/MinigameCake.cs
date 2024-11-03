@@ -12,9 +12,17 @@ public class MinigameCake : MinigameWorkStation
 
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
+    [SerializeField] private List<GameObject> _cakeSegments;
+    private Dictionary<ItemType, int> _indexByType;
 
     private void Awake()
     {
+        _indexByType = new()
+        {
+            {ItemType.ReadyDough, 0 },
+            {ItemType.Cream, 1 },
+            {ItemType.SlicedStrawberries, 2 }
+        };
         _button.onClick.AddListener(delegate { _window.SetActive(false); });
     }
 
@@ -31,6 +39,7 @@ public class MinigameCake : MinigameWorkStation
     {
         if (_needItems.Contains(item))
         {
+            _cakeSegments[_indexByType[item]].SetActive(true);
             _needItems.Remove(item);
             Cook();
         }
