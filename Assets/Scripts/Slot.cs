@@ -12,11 +12,17 @@ public class Slot : Interactable
     {
         if (_container is null && _player.Container is null) return;
 
+        Debug.Log(_container);
+        Debug.Log(_player);
+
         if (_player.Container is null)
         {
             _player.Container = _container;
+            Debug.Log(_player.Container);
             _container.transform.SetParent(_player.ItemAnchor);
+            Debug.Log("container.transform.SetParent(_player.ItemAnchor);");
             _container.transform.localPosition = Vector3.zero;
+
             _container = null;
         }
         else
