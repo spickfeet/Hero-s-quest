@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IContainer
 {
-    IItem Item { get; }
-    void CollectItem(IItem item);
+    ItemType Item { get; }
+    void CollectItem(ItemType item);
     void RemoveItem();
 }
