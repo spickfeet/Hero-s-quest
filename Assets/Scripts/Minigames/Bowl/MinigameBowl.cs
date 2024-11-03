@@ -10,8 +10,21 @@ public class MinigameBowl : MinigameWorkStation
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
 
+    [SerializeField] List<GameObject> _ingredientInBowl;
+    private Dictionary<ItemType, int> _indexByType;
+
     private void Awake()
     {
+        _indexByType = new()
+        {
+            {ItemType.Flour, 0},
+            {ItemType.Egg, 1},
+            {ItemType.Sugar, 0},
+            {ItemType.CreamCheese, 1},
+            {ItemType.HeavyCream, 2},
+        };
+
+
         _button.onClick.AddListener(delegate { _window.SetActive(false); });
     }
 
@@ -22,8 +35,8 @@ public class MinigameBowl : MinigameWorkStation
             _currentCountMixing++;
             if (_currentCountMixing >= _needCountMixing)
             {
+                _ingredientInBowl[_ingredientInBowl.Count - 1].SetActive(true);
                 OnFinished?.Invoke(_resultItem);
-                Debug.Log("OnFinished");
             }
         }
     }
@@ -33,6 +46,7 @@ public class MinigameBowl : MinigameWorkStation
         if (_needItems.Contains(item))
         {
             _needItems.Remove(item);
+            _ingredientInBowl[_indexByType[item]].SetActive(true);
         }
     }
 }

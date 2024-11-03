@@ -6,6 +6,7 @@ public class MinigameForm : MinigameWorkStation
 {
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
+    [SerializeField] private GameObject _doughInForm;
 
     private void Awake()
     {
@@ -14,7 +15,7 @@ public class MinigameForm : MinigameWorkStation
 
     public override void Cook()
     {
+        _doughInForm.SetActive(true);
         OnFinished?.Invoke(_resultItem);
-        Debug.Log("OnFinished");
     }
 }

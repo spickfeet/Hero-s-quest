@@ -10,6 +10,7 @@ public class MinigameBoard : MinigameWorkStation
 
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
+    [SerializeField] private List<GameObject> _ingredientOnBoard;
 
     private void Awake()
     {
@@ -24,7 +25,8 @@ public class MinigameBoard : MinigameWorkStation
             if (_currentCountCutting >= _needCountCutting)
             {
                 OnFinished?.Invoke(_resultItem);
-                Debug.Log("OnFinished");
+                _ingredientOnBoard[0].SetActive(false);
+                _ingredientOnBoard[1].SetActive(true);
             }
         }
     }
@@ -34,6 +36,7 @@ public class MinigameBoard : MinigameWorkStation
         if (_needItems.Contains(item))
         {
             _needItems.Remove(item);
+            _ingredientOnBoard[0].SetActive(true);
         }
     }
 }
