@@ -48,7 +48,7 @@ public class WorkStation : Interactable
 
     public IEnumerator FinishCoroutine()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         _minigameWindow.SetActive(false);
         _selection.ResetPos();
     }
