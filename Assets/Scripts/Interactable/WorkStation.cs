@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -7,6 +8,8 @@ public class WorkStation : Interactable
     [SerializeField] private MinigameWorkStation _minigameWorkStation;
     [SerializeField] private GameObject _minigameWindow;
     [SerializeField] private Selection _selection;
+
+    public Action<ItemType> OnTaskComplete;
 
     private bool _isFinished;
 
