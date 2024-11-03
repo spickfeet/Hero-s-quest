@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482550fa3f4b49042b2cfc791762bd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needCountMixing: 10
   _needItems: 040000000800000009000000
+  _needCountMixing: 10
   _button: {fileID: 109204736}
   _window: {fileID: 180799294}
 --- !u!50 &20326941
@@ -2277,8 +2277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd988ee92902e54db5594f9f5f3877e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needCountFire: 3
   _needItems: 07000000
+  _needCountFire: 3
   _button: {fileID: 867624707}
   _window: {fileID: 1903161108}
 --- !u!50 &430920261
@@ -2366,6 +2366,7 @@ GameObject:
   - component: {fileID: 467147025}
   - component: {fileID: 467147027}
   - component: {fileID: 467147028}
+  - component: {fileID: 467147029}
   m_Layer: 0
   m_Name: Bowl
   m_TagString: Untagged
@@ -2503,6 +2504,20 @@ MonoBehaviour:
   _minigameWorkStation: {fileID: 1105382254}
   _minigameWindow: {fileID: 615436736}
   _selection: {fileID: 530291949}
+--- !u!114 &467147029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467147024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caed95dabd0ba4540ac6448244cb6f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anchor: {fileID: 467147026}
+  _container: {fileID: 0}
 --- !u!1001 &478835131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2691,10 +2706,6 @@ PrefabInstance:
     - target: {fileID: 2451055398325127205, guid: c318e489c49c6a54dbac291bc461e586, type: 3}
       propertyPath: m_Name
       value: Newspaper
-      objectReference: {fileID: 0}
-    - target: {fileID: 7971972410923160528, guid: c318e489c49c6a54dbac291bc461e586, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4300,8 +4311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482550fa3f4b49042b2cfc791762bd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needCountMixing: 3
   _needItems: 02000000
+  _needCountMixing: 3
   _button: {fileID: 1737823009}
   _window: {fileID: 838064112}
 --- !u!50 &1076129876
@@ -4578,8 +4589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482550fa3f4b49042b2cfc791762bd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needCountMixing: 10
   _needItems: 0100000003000000
+  _needCountMixing: 10
   _button: {fileID: 1043549082}
   _window: {fileID: 615436736}
 --- !u!50 &1105382255
@@ -5860,8 +5871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482550fa3f4b49042b2cfc791762bd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needCountMixing: 0
   _needItems: 
+  _needCountMixing: 0
   _button: {fileID: 1694163241}
   _window: {fileID: 374725545}
 --- !u!1 &1660315654

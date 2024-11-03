@@ -54,17 +54,9 @@ MonoBehaviour:
   _text: {fileID: 1936983531639270146}
   _button: {fileID: 403425997997074452}
   _news:
-  - Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-    Text: "\u041F\u0435\u0440\u0432\u0430\u044F \u043D\u043E\u0432\u043E\u0441\u0442\u044C
-      \u043E \u0433\u0435\u0440\u043E\u0435"
-    TimeToStart: 10
-  - Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    Text: "\u0412\u0442\u043E\u0440\u0430\u044F \u043D\u043E\u0432\u043E\u0441\u0442\u044C
-      \u043E \u0433\u0435\u0440\u043E\u0435"
-    TimeToStart: 25
-  - Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-    Text: "\u0413\u0435\u0440\u043E\u0439 \u043F\u043E\u0431\u0435\u0434\u0438\u043B"
-    TimeToStart: 45
+  - {fileID: 11400000, guid: 76a75fe6c52e04049a612da8b3aeda13, type: 2}
+  - {fileID: 11400000, guid: 1b2ddff269f4a3244861e4ce0a2be231, type: 2}
+  - {fileID: 11400000, guid: 17e35e6114c684a498cae5e2cabb7c23, type: 2}
 --- !u!1 &3735717273250461746
 GameObject:
   m_ObjectHideFlags: 0
