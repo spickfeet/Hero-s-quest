@@ -8,12 +8,8 @@ using UnityEngine.EventSystems;
 public class Ingredient : MonoBehaviour
 {
     [SerializeField] private ItemType _item;
-    private Vector2 _basePos;
 
-    private void Awake()
-    {
-        _basePos = transform.position;
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IMinigameWorkStation minigameWorkStation = collision.GetComponent<IMinigameWorkStation>();

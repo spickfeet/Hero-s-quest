@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public struct News
+[CreateAssetMenu(fileName = "News", menuName = "Scriptable Objects/News")]
+public class News : ScriptableObject
 {
     public Sprite Sprite;
-    public string Text;
+    [TextArea] public string Text;
     public float TimeToStart;
 }
