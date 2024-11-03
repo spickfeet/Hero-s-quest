@@ -1,5 +1,8 @@
 public enum ContainerType
 {
     None,
-    Basket
+    Basket,
+    Bag,
+    Bowl,
+    Form
 }

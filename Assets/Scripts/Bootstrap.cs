@@ -7,20 +7,21 @@ public class Bootstrap : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private Newspaper _newspaper;
     [SerializeField] private Player _player;
-    private Slot[] _slots;
+
+    [SerializeField] private Interactable[] _interactables;
 
     private void Awake()
     {
-        _slots = (Slot[])FindObjectsByType(typeof(Slot), FindObjectsSortMode.None);
+        _interactables = (Interactable[])FindObjectsByType(typeof(Interactable), FindObjectsSortMode.None);
     }
 
     private void Start()
     {
         _newspaper.Inject(_timer);
 
-        foreach (Slot slot in _slots)
+        foreach (Interactable interactable in _interactables)
         {
-            slot.Inject(_player);
+            interactable.Inject(_player);
         }
     }
 }
