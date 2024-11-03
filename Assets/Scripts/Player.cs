@@ -29,11 +29,13 @@ public class Player : MonoBehaviour
     }
     private void Interact(Collider2D[] collider2Ds)
     {
-        if (collider2Ds[0].TryGetComponent(out IInteractable interactable))
+        for (int i = 0; i < collider2Ds.Length; i++)
         {
-            interactable.Interact();
-        }
-        
+            if (collider2Ds[i].TryGetComponent(out IInteractable interactable))
+            {
+                interactable.Interact();
+            }
+        }    
     }
 
     private void OnDrawGizmosSelected()
