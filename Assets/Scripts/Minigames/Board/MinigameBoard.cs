@@ -4,10 +4,9 @@ using UnityEngine.UI;
 
 public class MinigameBoard : MinigameWorkStation
 {
+
     [SerializeField] private int _needCountCutting;
     private int _currentCountCutting = 0;
-
-    [SerializeField] private List<ItemType> _needItems;
 
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
@@ -24,7 +23,7 @@ public class MinigameBoard : MinigameWorkStation
             _currentCountCutting++;
             if (_currentCountCutting >= _needCountCutting)
             {
-                OnFinished?.Invoke();
+                OnFinished?.Invoke(_resultItem);
                 Debug.Log("OnFinished");
             }
         }

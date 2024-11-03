@@ -14,7 +14,7 @@ public class MinigameForm : MinigameWorkStation
 
     public override void Cook()
     {
-        OnFinished?.Invoke();
+        OnFinished?.Invoke(_resultItem);
         Debug.Log("OnFinished");
     }
 }

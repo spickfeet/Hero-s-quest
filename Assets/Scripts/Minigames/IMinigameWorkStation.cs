@@ -4,6 +4,6 @@ public interface IMinigameWorkStation
 {
     public void Cook();
     public void Add(ItemType item);
-    public Action OnFinished { get; set; }
+    public Action<ItemType> OnFinished { get; set; }
 }
 
