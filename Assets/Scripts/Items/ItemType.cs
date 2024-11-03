@@ -10,6 +10,7 @@ public enum ItemType
     Form,
     HeavyCream,
     CreamCheese,
+    ReadyDough,
     SlicedStrawberries,
     Cake,
 }

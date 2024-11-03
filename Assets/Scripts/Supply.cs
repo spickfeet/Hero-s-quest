@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Supply : Interactable
 {
     [SerializeField] private ContainerType _containerType;
     [SerializeField] private ItemType _itemType;
+    [SerializeField] private GameObject _resultPref;
 
     [SerializeField] private List<SupplySprite> _supplySprites;
 
@@ -24,17 +26,17 @@ public class Supply : Interactable
 
     public override void Interact()
     {
-        if (_player.Container is null) return;
+        if (_player.Container != null || _itemType == ItemType.Empty) return;
 
-        if (_containerType == _player.Container.Type)
-        {
-            if (_player.Container.Item == ItemType.Empty)
-            {
-                _player.Container.CollectItem(_itemType);
-                _itemType = ItemType.Empty;
-                ChangeSprite(_itemType);
-            }
-        }
+        GameObject go = Instantiate(_resultPref);
+        _player.Container = go.GetComponent<Container>();
+        go.transform.SetParent(_player.ItemAnchor);
+        _player.Container.transform.localPosition = new Vector2(0, 0);
+        _player.Container.CollectItem(_itemType);
+
+        _itemType = ItemType.Empty;
+        ChangeSprite(_itemType);
+
     }
 
     private void ChangeSprite(ItemType itemType)

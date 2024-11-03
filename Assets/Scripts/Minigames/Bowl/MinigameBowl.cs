@@ -7,8 +7,6 @@ public class MinigameBowl : MinigameWorkStation
     [SerializeField] private int _needCountMixing;
     private int _currentCountMixing = 0;
 
-    [SerializeField] private List<ItemType> _needItems;
-
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
 
@@ -24,7 +22,7 @@ public class MinigameBowl : MinigameWorkStation
             _currentCountMixing++;
             if (_currentCountMixing >= _needCountMixing)
             {
-                OnFinished?.Invoke();
+                OnFinished?.Invoke(_resultItem);
                 Debug.Log("OnFinished");
             }
         }

@@ -7,8 +7,6 @@ public class MinigameFurnace : MinigameWorkStation
     [SerializeField] private int _needCountFire;
     private int _currentCountFire = 0;
 
-    [SerializeField] private List<ItemType> _needItems;
-
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
 
@@ -24,7 +22,7 @@ public class MinigameFurnace : MinigameWorkStation
             _currentCountFire++;
             if (_currentCountFire >= _needCountFire)
             {
-                OnFinished?.Invoke();
+                OnFinished?.Invoke(_resultItem);
                 Debug.Log("OnFinished");
             }
         }

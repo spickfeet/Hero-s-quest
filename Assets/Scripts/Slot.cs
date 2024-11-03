@@ -12,9 +12,6 @@ public class Slot : Interactable
     {
         if (_container is null && _player.Container is null) return;
 
-        Debug.Log(_container);
-        Debug.Log(_player);
-
         if (_player.Container is null)
         {
             _player.Container = _container;

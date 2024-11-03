@@ -10,18 +10,20 @@ public class Bootstrap : MonoBehaviour
 
     [SerializeField] private Interactable[] _interactables;
 
+    [SerializeField] private TasksControllerUI _tasksControllerUI;
+    private WorkStation[] _workStations;
+
     private void Awake()
     {
         _interactables = (Interactable[])FindObjectsByType(typeof(Interactable), FindObjectsSortMode.None);
-    }
+        _workStations = (WorkStation[])FindObjectsByType(typeof(WorkStation), FindObjectsSortMode.None);
 
-    private void Start()
-    {
         _newspaper.Inject(_timer);
 
         foreach (Interactable interactable in _interactables)
         {
             interactable.Inject(_player);
         }
+        _tasksControllerUI.Inject(_workStations);
     }
 }
