@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Supply : Interactable
