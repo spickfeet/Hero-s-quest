@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Newspaper : MonoBehaviour
+public class Scroll : MonoBehaviour
 {
     [SerializeField] private GameObject _paper;
     [SerializeField] private Image _image;
