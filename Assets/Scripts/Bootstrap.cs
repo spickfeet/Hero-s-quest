@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Timer _timer;
-    [SerializeField] private Scroll _scroll;
+    [SerializeField] private ScrollByTime _scroll;
     [SerializeField] private Player _player;
 
     [SerializeField] private TasksControllerUI _tasksControllerUI;
