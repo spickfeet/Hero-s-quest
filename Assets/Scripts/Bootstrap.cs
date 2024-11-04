@@ -5,12 +5,12 @@ using UnityEngine;
 public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Timer _timer;
-    [SerializeField] private Newspaper _newspaper;
+    [SerializeField] private Scroll _scroll;
     [SerializeField] private Player _player;
 
-    [SerializeField] private Interactable[] _interactables;
-
     [SerializeField] private TasksControllerUI _tasksControllerUI;
+
+    private Interactable[] _interactables;
     private WorkStation[] _workStations;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Bootstrap : MonoBehaviour
         _interactables = (Interactable[])FindObjectsByType(typeof(Interactable), FindObjectsSortMode.None);
         _workStations = (WorkStation[])FindObjectsByType(typeof(WorkStation), FindObjectsSortMode.None);
 
-        _newspaper.Inject(_timer);
+        _scroll.Inject(_timer);
 
         foreach (Interactable interactable in _interactables)
         {
