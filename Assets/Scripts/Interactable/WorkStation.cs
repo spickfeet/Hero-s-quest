@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 
@@ -25,7 +26,6 @@ public class WorkStation : Interactable
 
     private void Awake()
     {
-        _minigameWorkStation.Inject(_needItems, _resultItem);
         _needItemsCopy = new List<ItemType>(_needItems);
         _isFinished = false;
         _minigameWorkStation.OnFinished += Finish;
@@ -51,11 +51,22 @@ public class WorkStation : Interactable
         yield return new WaitForSeconds(1f);
         _minigameWindow.SetActive(false);
         _selection.ResetPos();
+        if (_resultItem == ItemType.Cake) 
+        {
+            StartCoroutine(StartFinalScene());
+        }
+
+
+    }
+
+    private IEnumerator StartFinalScene()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public override void Interact()
-    {
-        Debug.Log(_needItemsCopy);
+    {;
         if (_player.Container != null)
         {
             if (_needItemsCopy.Contains(_player.Container.Item))
@@ -73,6 +84,10 @@ public class WorkStation : Interactable
                 _minigameWindow.SetActive(true);
             }
         }    
+    }
+    public void Inject(AudioManager audioManager)
+    {
+        _minigameWorkStation.Inject(_needItems, _resultItem, audioManager);
     }
 }
 

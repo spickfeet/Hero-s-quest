@@ -7,6 +7,7 @@ public class Bootstrap : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private Scroll _scroll;
     [SerializeField] private Player _player;
+    [SerializeField] private AudioManager _audioManager;
 
     [SerializeField] private TasksControllerUI _tasksControllerUI;
 
@@ -25,5 +26,10 @@ public class Bootstrap : MonoBehaviour
             interactable.Inject(_player);
         }
         _tasksControllerUI.Inject(_workStations);
+        foreach (WorkStation workStation in _workStations)
+        {
+            workStation.Inject(_audioManager);
+        }
+        _player.Inject(_audioManager);
     }
 }

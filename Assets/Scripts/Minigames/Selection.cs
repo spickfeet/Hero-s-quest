@@ -27,7 +27,6 @@ public class Selection : MonoBehaviour, IPickable
 
     public void ResetPos()
     {
-        Debug.Log(100);
         _basePos = new Vector2(-10000, -1000);
     }
 

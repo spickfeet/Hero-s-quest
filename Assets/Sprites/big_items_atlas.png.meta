@@ -889,7 +889,7 @@ TextureImporter:
         width: 81
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -897,6 +897,27 @@ TextureImporter:
       bones: []
       spriteID: 57c84e914eae47e429a36e1af7b30376
       internalID: -6921183833265990002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big_items_atlas_19
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 423
+        width: 198
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74de59832151736468956832d22b6049
+      internalID: -2625008310023768239
       vertices: []
       indices: 
       edges: []

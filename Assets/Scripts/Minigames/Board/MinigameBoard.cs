@@ -22,6 +22,7 @@ public class MinigameBoard : MinigameWorkStation
         if (_needItems.Count == 0)
         {
             _currentCountCutting++;
+            _audioManager.PlaySFX(_audioClips[1]);
             if (_currentCountCutting >= _needCountCutting)
             {
                 OnFinished?.Invoke(_resultItem);
@@ -36,6 +37,7 @@ public class MinigameBoard : MinigameWorkStation
         if (_needItems.Contains(item))
         {
             _needItems.Remove(item);
+            _audioManager.PlaySFX(_audioClips[0]);
             _ingredientOnBoard[0].SetActive(true);
         }
     }

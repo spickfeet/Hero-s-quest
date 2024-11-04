@@ -31,7 +31,6 @@ public class MinigameCake : MinigameWorkStation
         if (_needItems.Count == 0)
         {
             OnFinished?.Invoke(_resultItem);
-            Debug.Log("OnFinished");
         }
     }
 
@@ -41,6 +40,7 @@ public class MinigameCake : MinigameWorkStation
         {
             _cakeSegments[_indexByType[item]].SetActive(true);
             _needItems.Remove(item);
+            _audioManager.PlaySFX(_audioClips[0]);
             Cook();
         }
     }

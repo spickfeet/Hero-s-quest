@@ -15,9 +15,7 @@ public class Slot : Interactable
         if (_player.Container is null)
         {
             _player.Container = _container;
-            Debug.Log(_player.Container);
             _container.transform.SetParent(_player.ItemAnchor);
-            Debug.Log("container.transform.SetParent(_player.ItemAnchor);");
             _container.transform.localPosition = Vector3.zero;
 
             _container = null;
