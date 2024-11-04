@@ -11,6 +11,10 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _sfxSlider;
 
+    [SerializeField] private GameObject _settingsUI;
+
+    [SerializeField] private AudioManager _audioManager;
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("MusicVolume"))
@@ -36,6 +40,8 @@ public class VolumeSettings : MonoBehaviour
         float volume = _sfxSlider.value;
         _audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
+
+        _audioManager.PlaySFX(_audioManager.SFX);
     }
 
     public void LoadVolume()
@@ -49,6 +55,6 @@ public class VolumeSettings : MonoBehaviour
 
     public void Return()
     {
-        gameObject.SetActive(false);
+        _settingsUI.SetActive(false);
     }
 }

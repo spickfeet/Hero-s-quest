@@ -13,6 +13,7 @@ public class Bootstrap : MonoBehaviour
 
     private Interactable[] _interactables;
     private WorkStation[] _workStations;
+    private Scroll[] _scrolls;
 
     private void Awake()
     {

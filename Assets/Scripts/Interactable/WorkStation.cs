@@ -62,7 +62,7 @@ public class WorkStation : Interactable
     private IEnumerator StartFinalScene()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GoodEnding");
     }
 
     public override void Interact()
