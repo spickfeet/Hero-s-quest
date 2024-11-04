@@ -3070,7 +3070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2881184596436074130, guid: 906f52a2b81f76845824761ffbbd3341, type: 3}
       propertyPath: _timeToFinish
-      value: 240
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3894191790945208853, guid: 906f52a2b81f76845824761ffbbd3341, type: 3}
       propertyPath: m_Pivot.x
@@ -9456,16 +9456,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 0
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -4, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 0
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: -3, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -9577,6 +9567,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
   - first: {x: 6, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 0
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
+  - first: {x: -12, y: 1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 17
@@ -15746,11 +15746,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 527780306653436025, guid: 492785d042a5d5f46a3294927ac6cfde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 527780306653436025, guid: 492785d042a5d5f46a3294927ac6cfde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 527780306653436025, guid: 492785d042a5d5f46a3294927ac6cfde, type: 3}
       propertyPath: m_LocalPosition.z
