@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("-------Audio Clips-------")]
     public AudioClip Music;
+    public AudioClip SFX;
+    public AudioClip Scroll;
 
     private void Start()
     {
@@ -16,8 +18,10 @@ public class AudioManager : MonoBehaviour
         _musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip audioClip)
+    public void PlaySFX(AudioClip audioClip, float volume = 1)
     {
-        _sfxSource.PlayOneShot(audioClip);
+        if (audioClip == null) return;
+
+        _sfxSource.PlayOneShot(audioClip, volume);
     }
 }

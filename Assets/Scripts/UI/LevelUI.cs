@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndUI : MonoBehaviour
+public class LevelUI : MonoBehaviour
 {
-    [SerializeField] private Scroll _scroll;
+    [SerializeField] private Timer _timer;
 
     [SerializeField] private string _sceneName;
 
     private void OnEnable()
     {
-        _scroll.NewsEnded += OnNewsEnded;
+        _timer.TimeEnded += OnTimerEnded;
     }
 
     private void OnDisable()
     {
-        _scroll.NewsEnded -= OnNewsEnded;
+        _timer.TimeEnded -= OnTimerEnded;
     }
 
-    private void OnNewsEnded()
+    private void OnTimerEnded()
     {
         SceneManager.LoadScene(_sceneName);
     }

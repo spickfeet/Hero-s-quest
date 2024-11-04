@@ -12,6 +12,8 @@ public abstract class Scroll : MonoBehaviour
 
     [SerializeField] protected List<News> _news;
 
+    [SerializeField] protected AudioManager _audioManager;
+
     public UnityAction NewsEnded;
 
     protected void Awake()
@@ -22,6 +24,7 @@ public abstract class Scroll : MonoBehaviour
     protected virtual void CrossButton()
     {
         _paper.SetActive(false);
+        _audioManager.PlaySFX(_audioManager.Scroll, 2);
     }
 
     protected virtual void DisplayNews(News news)

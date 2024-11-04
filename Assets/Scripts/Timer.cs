@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
@@ -10,6 +11,8 @@ public class Timer : MonoBehaviour
     public float CurrentTime => _timeToFinish - _time;
 
     private Text _text;
+
+    public UnityAction TimeEnded;
 
     private void Awake()
     {
@@ -27,6 +30,10 @@ public class Timer : MonoBehaviour
         {
             _time -= Time.deltaTime;
             _text.text = ((int)_time).ToString();
+        }
+        else
+        {
+            TimeEnded?.Invoke();
         }
     }
 }
