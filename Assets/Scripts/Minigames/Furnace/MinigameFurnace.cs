@@ -9,6 +9,7 @@ public class MinigameFurnace : MinigameWorkStation
 
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
+    [SerializeField] private List<GameObject> _ingredientsInFurnace;
 
     private void Awake()
     {
@@ -19,11 +20,13 @@ public class MinigameFurnace : MinigameWorkStation
     {
         if (_needItems.Count == 0)
         {
+            _audioManager.PlaySFX(_audioClips[1]);
             _currentCountFire++;
             if (_currentCountFire >= _needCountFire)
             {
+                _ingredientsInFurnace[0].SetActive(false);
+                _ingredientsInFurnace[1].SetActive(true);
                 OnFinished?.Invoke(_resultItem);
-                Debug.Log("OnFinished");
             }
         }
     }
@@ -32,7 +35,9 @@ public class MinigameFurnace : MinigameWorkStation
     {
         if (_needItems.Contains(item))
         {
+            _audioManager.PlaySFX(_audioClips[0]);
             _needItems.Remove(item);
+            _ingredientsInFurnace[0].SetActive(true);
         }
     }
 }

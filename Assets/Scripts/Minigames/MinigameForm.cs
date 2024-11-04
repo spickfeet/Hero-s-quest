@@ -15,6 +15,7 @@ public class MinigameForm : MinigameWorkStation
 
     public override void Cook()
     {
+        _audioManager.PlaySFX(_audioClips[0]);
         _doughInForm.SetActive(true);
         OnFinished?.Invoke(_resultItem);
     }

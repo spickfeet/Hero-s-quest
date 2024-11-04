@@ -122,7 +122,7 @@ MonoBehaviour:
     ItemType: 10
   - Sprite: {fileID: 2057863791, guid: 3cd3e21ab4075f64a9b1e59c8e0fc4b2, type: 3}
     ItemType: 11
-  - Sprite: {fileID: 107476608, guid: 3cd3e21ab4075f64a9b1e59c8e0fc4b2, type: 3}
+  - Sprite: {fileID: -933537817, guid: 3cd3e21ab4075f64a9b1e59c8e0fc4b2, type: 3}
     ItemType: 12
   - Sprite: {fileID: 338235917, guid: 3cd3e21ab4075f64a9b1e59c8e0fc4b2, type: 3}
     ItemType: 8

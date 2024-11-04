@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _radiusInteraction = 3;
 
     [SerializeField] private Container _container;
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private AudioClip _pickUp;
+    
     public Container Container
     {
         get { return _container; }
-        set { _container = value; }
+        set 
+        { 
+            _container = value; 
+            _audioManager.PlaySFX(_pickUp);
+        }
     }
 
     [SerializeField] private Transform _itemAnchor;
@@ -29,14 +37,32 @@ public class Player : MonoBehaviour
     }
     private void Interact(Collider2D[] collider2Ds)
     {
+        float minDist = 100f;
+
+        Interactable interactable = null;
+
         foreach (var collider2D in collider2Ds)
         {
-            if (collider2D.TryGetComponent(out IInteractable interactable))
+            float dist = Vector3.Distance(transform.position, collider2D.transform.position);
+
+            if (collider2D.TryGetComponent(out Interactable tempInteractable))
             {
-                interactable.Interact();
-                break;
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    interactable = tempInteractable;
+                }
             }
         }
+        if (interactable != null)
+        {
+            interactable.Interact();
+        }
+    }
+
+    public void Inject(AudioManager audioManager)
+    {
+        _audioManager = audioManager;
     }
 
     private void OnDrawGizmosSelected()

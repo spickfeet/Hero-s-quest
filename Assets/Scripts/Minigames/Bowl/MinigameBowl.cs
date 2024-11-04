@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class MinigameBowl : MinigameWorkStation
 {
@@ -10,7 +11,7 @@ public class MinigameBowl : MinigameWorkStation
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _window;
 
-    [SerializeField] List<GameObject> _ingredientInBowl;
+    [SerializeField] private List<GameObject> _ingredientInBowl;
     private Dictionary<ItemType, int> _indexByType;
 
     private void Awake()
@@ -33,6 +34,7 @@ public class MinigameBowl : MinigameWorkStation
         if (_needItems.Count == 0)
         {
             _currentCountMixing++;
+            _audioManager.PlaySFX(_audioClips[_ingredientInBowl.Count - 1]);
             if (_currentCountMixing >= _needCountMixing)
             {
                 _ingredientInBowl[_ingredientInBowl.Count - 1].SetActive(true);
@@ -46,6 +48,7 @@ public class MinigameBowl : MinigameWorkStation
         if (_needItems.Contains(item))
         {
             _needItems.Remove(item);
+            _audioManager.PlaySFX(_audioClips[_indexByType[item]]);
             _ingredientInBowl[_indexByType[item]].SetActive(true);
         }
     }

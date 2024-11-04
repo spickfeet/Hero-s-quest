@@ -27,9 +27,6 @@ public class Ingredient : MonoBehaviour
     private IEnumerator Delete()
     {
         yield return new WaitForSeconds(0.2f);
-        Debug.Log(_selection.CurrentTransform.position);
-        Debug.Log(transform.position);
-        Debug.Log(_selection.CurrentTransform.position == transform.position);
         
         if (_selection.Drag == false || _selection.CurrentTransform.position == transform.position) 
         {
